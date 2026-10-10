@@ -99,6 +99,8 @@ export function CreationsGallery() {
                     accentColor={item.accentColor}
                     image={item.image}
                     title={item.title}
+                    isPlaceholder={item.isPlaceholder}
+                    galleryImages={item.galleryImages}
                   />
 
                   {/* Card Content Details */}

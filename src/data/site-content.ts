@@ -7,6 +7,7 @@ export interface CreationItem {
   materials: string;
   details: string;
   image: string;
+  galleryImages?: string[];
   isPlaceholder: boolean;
   placeholderArtType: "pipe-bloom" | "calligraphy-scroll" | "mini-canvas" | "mixed-commission";
   accentColor: string;
@@ -37,15 +38,21 @@ export const CRAFT_CATEGORIES = [
 export const CREATION_ITEMS: CreationItem[] = [
   {
     id: "item-1",
-    title: "Velvet Meadow Bouquet",
+    title: "Pipe Cleaner Phone Case",
     category: "pipe-cleaner",
     categoryLabel: "Pipe-Cleaner Crafts",
     description:
-      "Everlasting floral arrangement sculptured with soft, pliable velvet pipe-cleaners in moss green, buttercup yellow, and blush.",
-    materials: "Chenille stems, floral wire, wooden vase perch",
-    details: "Handmade bloom by bloom. Never fades.",
-    image: "/images/creations/item-1.jpg",
-    isPlaceholder: true,
+      "A handmade phone case decorated with soft, colourful pipe-cleaner flowers and butterfly details. Its rich green texture and playful pink embellishments make it a unique, creative accessory for anyone who loves artsy, personalised designs.",
+    materials: "Chenille pipe-cleaner craft, protective case backing, floral & butterfly charms",
+    details: "Tactile emerald chenille moss texture with delicate pink blooms & butterfly accents.",
+    image: "/images/products/p1/product1.png",
+    galleryImages: [
+      "/images/products/p1/product1.png",
+      "/images/products/p1/product2.png",
+      "/images/products/p1/Emerald Chenille Floral Phone Case.png",
+      "/images/products/p1/Handcrafted Emerald Yarn Phone Case Display.png",
+    ],
+    isPlaceholder: false,
     placeholderArtType: "pipe-bloom",
     accentColor: "#DCE8D5",
   },

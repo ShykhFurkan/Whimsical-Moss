@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
 import Image from "next/image";
 import { CreationItem } from "@/data/site-content";
 import { DevPlaceholderBadge } from "./dev-placeholder-badge";
@@ -8,17 +10,25 @@ export function ArtworkVisualCanvas({
   accentColor,
   image,
   title,
+  isPlaceholder = true,
+  galleryImages,
 }: {
   artType: CreationItem["placeholderArtType"];
   accentColor: string;
   image?: string;
   title?: string;
+  isPlaceholder?: boolean;
+  galleryImages?: string[];
 }) {
-  if (image) {
+  const [currentImage, setCurrentImage] = useState<string>(image || "");
+
+  const displayImage = currentImage || image;
+
+  if (displayImage) {
     return (
-      <div className="relative w-full h-64 overflow-hidden rounded-t-lg bg-[#EFE6D7] group">
+      <div className="relative w-full h-72 overflow-hidden rounded-t-lg bg-[#EFE6D7] group">
         <Image
-          src={image}
+          src={displayImage}
           alt={title || "Whimsical Moss handcrafted artwork"}
           width={600}
           height={600}
@@ -27,10 +37,51 @@ export function ArtworkVisualCanvas({
         {/* Subtle inner paper border */}
         <div className="absolute inset-0 ring-1 ring-inset ring-[#343D31]/10 pointer-events-none" />
 
-        {/* Development badge */}
+        {/* Status badge: Studio Creation vs Concept Preview */}
         <div className="absolute bottom-2.5 left-2.5 z-10">
-          <DevPlaceholderBadge label="AI Concept Preview" />
+          {isPlaceholder ? (
+            <DevPlaceholderBadge label="AI Concept Preview" />
+          ) : (
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded border border-[#343D31]/20 bg-[#FFFEFB]/90 text-[#343D31] shadow-xs backdrop-blur-xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+              <span className="font-mono text-[10px] uppercase tracking-wider font-semibold">
+                Studio Original
+              </span>
+            </div>
+          )}
         </div>
+
+        {/* Multiple gallery thumbnails selector */}
+        {galleryImages && galleryImages.length > 1 && (
+          <div className="absolute top-2.5 right-2.5 z-10 flex gap-1 p-1 bg-[#24231F]/70 rounded-md backdrop-blur-xs">
+            {galleryImages.map((img, idx) => (
+              <button
+                key={idx}
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCurrentImage(img);
+                }}
+                className={`w-6 h-6 rounded overflow-hidden border transition-all cursor-pointer ${
+                  displayImage === img
+                    ? "border-[#E8C67A] ring-1 ring-[#E8C67A] scale-110"
+                    : "border-white/40 opacity-70 hover:opacity-100"
+                }`}
+                title={`View angle ${idx + 1}`}
+                aria-label={`View angle ${idx + 1}`}
+              >
+                <Image
+                  src={img}
+                  alt={`Thumbnail ${idx + 1}`}
+                  width={24}
+                  height={24}
+                  className="w-full h-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     );
   }
