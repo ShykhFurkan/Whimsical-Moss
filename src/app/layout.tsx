@@ -26,6 +26,15 @@ export const metadata: Metadata = {
   title: "Whimsical Moss — Handmade Crafts, Calligraphy & Custom Art",
   description:
     "A little world of handmade creations. Whimsical pipe-cleaner crafts, custom dip-pen calligraphy, mini-canvases, and bespoke commissions made with care.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     title: "Whimsical Moss — Handmade Crafts, Calligraphy & Custom Art",
     description:

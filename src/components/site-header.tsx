@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
-import { BotanicalBloomSvg, InstagramIcon } from "./hand-drawn-accents";
+import { InstagramIcon } from "./hand-drawn-accents";
 import { MessageCircle, Menu, X } from "lucide-react";
 
 export function SiteHeader() {
@@ -14,13 +15,20 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 bg-[#F8F3E9]/90 backdrop-blur-md border-b border-[#343D31]/10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
-        {/* Brand Wordmark & Flourish */}
+        {/* Brand Wordmark & Logo */}
         <Link
           href="/"
-          className="group flex items-center gap-2.5 text-[#343D31] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#343D31] rounded-sm"
+          className="group flex items-center gap-3 text-[#343D31] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#343D31] rounded-sm"
         >
-          <div className="w-9 h-9 rounded-full bg-[#DCE8D5] flex items-center justify-center border border-[#343D31]/15 group-hover:rotate-12 transition-transform duration-300">
-            <BotanicalBloomSvg className="w-6 h-6 text-[#343D31]" />
+          <div className="relative w-11 h-11 sm:w-12 sm:h-12 rounded-full overflow-hidden border border-[#343D31]/15 shadow-xs bg-[#FAF7F2] shrink-0 group-hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/images/logo.png"
+              alt="Whimsical Moss logo"
+              width={48}
+              height={48}
+              priority
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <span className="font-[family-name:var(--font-serif)] text-2xl font-bold tracking-tight block leading-none">
