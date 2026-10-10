@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   BotanicalDaisySvg,
   BotanicalWildSprigSvg,
@@ -7,7 +8,7 @@ import {
   WashiTapeStrip,
 } from "./hand-drawn-accents";
 import { DevPlaceholderBadge } from "./dev-placeholder-badge";
-import { Palette, Scissors, Sparkles, Heart } from "lucide-react";
+import { Palette, Scissors, Sparkles, Heart, ArrowRight } from "lucide-react";
 
 export function MakerSection() {
   return (
@@ -115,12 +116,19 @@ export function MakerSection() {
               </p>
             </div>
 
-            {/* Hand-lettered signature flourish */}
-            <div className="pt-2 flex items-center gap-3">
-              <div className="font-[family-name:var(--font-handwriting)] text-3xl text-[#343D31]">
-                Whimsical Moss Studio
+            {/* Link to Full Maker Page & Signature flourish */}
+            <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <Link
+                href="/maker"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#343D31] hover:bg-[#24231F] text-[#FFFEFB] text-xs font-semibold tracking-wide transition-all shadow-xs"
+              >
+                <span>Read Full Story & Studio Philosophy</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+
+              <div className="flex items-center gap-2 font-[family-name:var(--font-handwriting)] text-2xl text-[#343D31]">
+                <span>Whimsical Moss Studio</span>
               </div>
-              <span className="text-xs font-mono text-[#343D31]/60">Handmade with care</span>
             </div>
           </div>
         </div>

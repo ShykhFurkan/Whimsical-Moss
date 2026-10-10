@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/site-config";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import {
   BotanicalBloomSvg,
   BotanicalDaisySvg,
@@ -12,10 +12,9 @@ import {
   CurvedArrow,
 } from "./hand-drawn-accents";
 import { DevPlaceholderBadge } from "./dev-placeholder-badge";
-import { MessageCircle, ArrowDown, Sparkles, Heart } from "lucide-react";
+import { MessageCircle, ArrowRight, Sparkles, Heart } from "lucide-react";
 
 export function HeroSection() {
-  const whatsappUrl = buildWhatsAppUrl();
 
   return (
     <section className="relative overflow-hidden pt-8 pb-16 md:pt-16 md:pb-24 border-b border-[#343D31]/10 bg-gradient-to-b from-[#F8F3E9] to-[#EFE6D7]/40">
@@ -103,23 +102,21 @@ export function HeroSection() {
 
             {/* Primary & Secondary Call to Actions */}
             <div className="pt-3 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-              <a
-                href={whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/custom-orders"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#343D31] text-[#FFFEFB] text-base font-medium shadow-md hover:bg-[#24231F] hover:shadow-lg transition-all active:scale-95"
               >
                 <MessageCircle className="w-5 h-5 text-[#E8C67A]" />
                 <span>Create Something Custom</span>
-              </a>
+              </Link>
 
-              <a
-                href="#creations"
+              <Link
+                href="/creations"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFFEFB] border border-[#343D31]/20 text-[#343D31] text-base font-medium hover:bg-[#EFE6D7]/60 hover:border-[#343D31]/40 transition-all shadow-xs"
               >
                 <span>Explore Creations</span>
-                <ArrowDown className="w-4 h-4 text-[#343D31]/70" />
-              </a>
+                <ArrowRight className="w-4 h-4 text-[#343D31]/70" />
+              </Link>
             </div>
 
             {/* Trust & enquiry note */}

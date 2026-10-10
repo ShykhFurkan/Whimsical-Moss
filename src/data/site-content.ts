@@ -1,5 +1,6 @@
 export interface CreationItem {
   id: string;
+  slug: string;
   title: string;
   category: "pipe-cleaner" | "calligraphy" | "paintings" | "custom";
   categoryLabel: string;
@@ -38,6 +39,7 @@ export const CRAFT_CATEGORIES = [
 export const CREATION_ITEMS: CreationItem[] = [
   {
     id: "item-1",
+    slug: "pipe-cleaner-phone-case",
     title: "Pipe Cleaner Phone Case",
     category: "pipe-cleaner",
     categoryLabel: "Pipe-Cleaner Crafts",
@@ -58,6 +60,7 @@ export const CREATION_ITEMS: CreationItem[] = [
   },
   {
     id: "item-2",
+    slug: "pipe-cleaner-flower-bouquet",
     title: "Handmade Pipe Cleaner Flower Bouquet",
     category: "pipe-cleaner",
     categoryLabel: "Pipe-Cleaner Crafts",
@@ -78,6 +81,7 @@ export const CREATION_ITEMS: CreationItem[] = [
   },
   {
     id: "item-3",
+    slug: "crochet-rose-bouquet",
     title: "Handmade Crochet Rose Bouquet",
     category: "custom",
     categoryLabel: "Custom & Crochet Creations",
@@ -98,6 +102,7 @@ export const CREATION_ITEMS: CreationItem[] = [
   },
   {
     id: "item-4",
+    slug: "crochet-handbag",
     title: "Handmade Blue & White Crochet Handbag",
     category: "custom",
     categoryLabel: "Custom & Crochet Creations",
@@ -118,6 +123,7 @@ export const CREATION_ITEMS: CreationItem[] = [
   },
   {
     id: "item-5",
+    slug: "arabic-calligraphy-framed-art",
     title: "Custom Arabic Calligraphy Framed Art",
     category: "calligraphy",
     categoryLabel: "Calligraphy & Ink",
@@ -138,6 +144,7 @@ export const CREATION_ITEMS: CreationItem[] = [
   },
   {
     id: "item-6",
+    slug: "islamic-canvas-wall-art",
     title: "Hand-Painted Islamic Canvas Wall Art",
     category: "paintings",
     categoryLabel: "Hand-Painted Canvas Art",
@@ -157,6 +164,10 @@ export const CREATION_ITEMS: CreationItem[] = [
     accentColor: "#343D31",
   },
 ];
+
+export function getCreationBySlugOrId(identifier: string): CreationItem | undefined {
+  return CREATION_ITEMS.find((item) => item.id === identifier || item.slug === identifier);
+}
 
 export const ORDER_PROCESS_STEPS: ProcessStep[] = [
   {

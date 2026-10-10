@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { CRAFT_CATEGORIES, CREATION_ITEMS, CreationItem } from "@/data/site-content";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { ArtworkVisualCanvas } from "./artwork-preview-card";
@@ -10,7 +11,7 @@ import {
   BotanicalWildSprigSvg,
   BotanicalFloatingPetalSvg,
 } from "./hand-drawn-accents";
-import { MessageCircle } from "lucide-react";
+import { MessageCircle, ArrowRight } from "lucide-react";
 
 export function CreationsGallery() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -114,9 +115,11 @@ export function CreationsGallery() {
                       </span>
                     </div>
 
-                    <h3 className="font-[family-name:var(--font-serif)] text-2xl font-bold text-[#24231F] group-hover:text-[#343D31] transition-colors">
-                      {item.title}
-                    </h3>
+                    <Link href={`/creations/${item.slug}`}>
+                      <h3 className="font-[family-name:var(--font-serif)] text-2xl font-bold text-[#24231F] group-hover:text-[#343D31] hover:underline transition-colors">
+                        {item.title}
+                      </h3>
+                    </Link>
 
                     <p className="text-sm text-[#343D31]/80 leading-relaxed">
                       {item.description}
@@ -133,15 +136,23 @@ export function CreationsGallery() {
                 </div>
 
                 {/* Card Action */}
-                <div className="p-6 pt-0">
+                <div className="p-6 pt-0 flex items-center gap-2">
+                  <Link
+                    href={`/creations/${item.slug}`}
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-full border border-[#343D31]/20 hover:border-[#343D31] hover:bg-[#EFE6D7] text-[#343D31] text-xs font-semibold tracking-wide transition-all shadow-2xs"
+                  >
+                    <span>View Details</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
                   <a
                     href={itemWhatsAppUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-full border border-[#343D31]/20 hover:border-[#343D31] hover:bg-[#343D31] hover:text-[#FFFEFB] text-[#343D31] text-xs font-semibold tracking-wide transition-all shadow-xs active:scale-98"
+                    className="inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-full bg-[#343D31] hover:bg-[#24231F] text-[#FFFEFB] text-xs font-semibold tracking-wide transition-all shadow-xs active:scale-98"
+                    title="Enquire on WhatsApp"
                   >
-                    <MessageCircle className="w-3.5 h-3.5" />
-                    <span>Enquire About This Style</span>
+                    <MessageCircle className="w-3.5 h-3.5 text-[#E8C67A]" />
+                    <span className="hidden sm:inline">WhatsApp</span>
                   </a>
                 </div>
               </article>

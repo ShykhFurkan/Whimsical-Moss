@@ -37,30 +37,36 @@ export function SiteHeader() {
           aria-label="Main Navigation"
           className="hidden md:flex items-center gap-7 text-sm font-medium text-[#343D31]/90"
         >
-          <a
-            href="#creations"
+          <Link
+            href="/creations"
             className="hover:text-[#343D31] transition-colors hover:underline underline-offset-4 decoration-[#E8C67A] decoration-2"
           >
             Creations
-          </a>
-          <a
-            href="#custom-orders"
+          </Link>
+          <Link
+            href="/custom-orders"
             className="hover:text-[#343D31] transition-colors hover:underline underline-offset-4 decoration-[#E8C67A] decoration-2"
           >
             Custom Orders
-          </a>
-          <a
-            href="#maker"
+          </Link>
+          <Link
+            href="/maker"
             className="hover:text-[#343D31] transition-colors hover:underline underline-offset-4 decoration-[#E8C67A] decoration-2"
           >
             The Maker
-          </a>
-          <a
-            href="#process"
+          </Link>
+          <Link
+            href="/process"
             className="hover:text-[#343D31] transition-colors hover:underline underline-offset-4 decoration-[#E8C67A] decoration-2"
           >
             Behind The Scenes
-          </a>
+          </Link>
+          <Link
+            href="/contact"
+            className="hover:text-[#343D31] transition-colors hover:underline underline-offset-4 decoration-[#E8C67A] decoration-2"
+          >
+            Contact
+          </Link>
         </nav>
 
         {/* Right CTA Actions */}
@@ -114,34 +120,41 @@ export function SiteHeader() {
       {mobileMenuOpen && (
         <div className="sm:hidden border-t border-[#343D31]/10 bg-[#FFFEFB] px-6 py-5 space-y-4 shadow-lg animate-in fade-in slide-in-from-top-2 duration-200">
           <nav className="flex flex-col space-y-3 text-base font-medium text-[#343D31]">
-            <a
-              href="#creations"
+            <Link
+              href="/creations"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-[#343D31]/5"
             >
               Creations Gallery
-            </a>
-            <a
-              href="#custom-orders"
+            </Link>
+            <Link
+              href="/custom-orders"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-[#343D31]/5"
             >
               Custom Order Process
-            </a>
-            <a
-              href="#maker"
+            </Link>
+            <Link
+              href="/maker"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-[#343D31]/5"
             >
               Meet The Maker
-            </a>
-            <a
-              href="#process"
+            </Link>
+            <Link
+              href="/process"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-[#343D31]/5"
             >
               Behind The Scenes
-            </a>
+            </Link>
+            <Link
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 border-b border-[#343D31]/5"
+            >
+              Contact & Enquiries
+            </Link>
             <a
               href={SITE_CONFIG.instagram.url}
               target="_blank"

@@ -1,8 +1,9 @@
 import React from "react";
+import Link from "next/link";
 import { STUDIO_HIGHLIGHTS } from "@/data/site-content";
 import { BotanicalBloomSvg, DoodleSparkle } from "./hand-drawn-accents";
 import { DevPlaceholderBadge } from "./dev-placeholder-badge";
-import { Layers, Sparkles, Feather, Gift } from "lucide-react";
+import { Layers, Sparkles, Feather, Gift, ArrowRight } from "lucide-react";
 
 export function ProcessSection() {
   const getIcon = (id: string) => {
@@ -74,6 +75,17 @@ export function ProcessSection() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom CTA to Full Process & Care Guide */}
+        <div className="text-center pt-2">
+          <Link
+            href="/process"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#343D31] hover:bg-[#24231F] text-[#FFFEFB] text-xs font-semibold tracking-wide transition-all shadow-xs"
+          >
+            <span>See Full Craft Process &amp; Care Guide</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         </div>
       </div>
     </section>

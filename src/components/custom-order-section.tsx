@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { ORDER_PROCESS_STEPS } from "@/data/site-content";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import {
@@ -219,6 +220,16 @@ export function CustomOrderSection() {
               <p className="text-[11px] text-center text-[#343D31]/60 font-[family-name:var(--font-handwriting)] text-sm">
                 No automatic checkout — orders are confirmed only after your approval.
               </p>
+
+              <div className="pt-2 border-t border-[#343D31]/10 text-center">
+                <Link
+                  href="/custom-orders"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#343D31] hover:underline"
+                >
+                  <span>Explore Full Custom Order Guide & Options</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

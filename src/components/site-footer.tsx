@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { BotanicalBloomSvg, InstagramIcon } from "./hand-drawn-accents";
@@ -39,24 +40,29 @@ export function SiteFooter() {
             </p>
             <ul className="space-y-2 text-sm text-[#FFFEFB]/80">
               <li>
-                <a href="#creations" className="hover:text-[#E8C67A] transition-colors">
+                <Link href="/creations" className="hover:text-[#E8C67A] transition-colors">
                   Creations Gallery
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#custom-orders" className="hover:text-[#E8C67A] transition-colors">
+                <Link href="/custom-orders" className="hover:text-[#E8C67A] transition-colors">
                   Custom Order Process
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#maker" className="hover:text-[#E8C67A] transition-colors">
+                <Link href="/maker" className="hover:text-[#E8C67A] transition-colors">
                   Meet The Maker
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#process" className="hover:text-[#E8C67A] transition-colors">
+                <Link href="/process" className="hover:text-[#E8C67A] transition-colors">
                   Behind The Scenes
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-[#E8C67A] transition-colors">
+                  Contact & Enquiries
+                </Link>
               </li>
             </ul>
           </div>
