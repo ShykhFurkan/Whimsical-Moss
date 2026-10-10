@@ -11,7 +11,7 @@ import {
   DoodleSparkle,
   CurvedArrow,
 } from "./hand-drawn-accents";
-import { MessageCircle, ArrowRight, Sparkles, Heart } from "lucide-react";
+import { MessageCircle, ArrowRight, Heart } from "lucide-react";
 
 export function HeroSection() {
 
@@ -140,39 +140,25 @@ export function HeroSection() {
               <div className="bg-[#FFFEFB] border border-[#343D31]/15 rounded-xl p-5 sm:p-6 shadow-xl relative">
                 {/* Polaroids / Artwork showcase */}
                 <div className="relative rounded-lg overflow-hidden bg-[#EFE6D7] border border-[#343D31]/15 shadow-sm group">
-                  <div className="relative w-full h-72 sm:h-80 overflow-hidden">
+                  <div className="relative w-full aspect-[1312/1199] overflow-hidden">
                     <Image
-                      src="/images/hero/hero-artwork.webp"
-                      alt="Handcrafted Whimsical Moss studio creations featuring pipe-cleaner flowers, calligraphy, and botanical art"
+                      src="/images/hero/whimsical-moss-craft-studio.webp"
+                      alt="Whimsical Moss Craft Studio handmade crochet handbag, flower bouquet, and botanical art"
                       fill
                       priority
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="object-cover transition-transform duration-500 group-hover:scale-103"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#24231F]/70 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between text-[#FFFEFB] z-10">
-                      <div>
-                        <p className="font-[family-name:var(--font-serif)] text-lg font-bold leading-tight">
-                          Handcrafted Velvet Blooms &amp; Calligraphy
-                        </p>
-                        <p className="font-[family-name:var(--font-handwriting)] text-sm text-[#E8C67A]">
-                          &ldquo;Patience, color, and gentle curves&rdquo;
-                        </p>
-                      </div>
-                      <span className="p-1.5 bg-[#E8C67A] text-[#343D31] rounded-full shadow-sm">
-                        <Sparkles className="w-3.5 h-3.5" />
-                      </span>
-                    </div>
                   </div>
-                  <div className="p-3 bg-[#FFFEFB] flex items-center justify-between border-t border-[#343D31]/10 text-xs">
+                  <div className="p-3.5 bg-[#FFFEFB] flex items-center justify-between border-t border-[#343D31]/10 text-xs">
                     <div className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded border border-[#343D31]/20 bg-[#FFFEFB] text-[#343D31] shadow-2xs">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
                       <span className="font-mono text-[10px] uppercase tracking-wider font-semibold">
                         Studio Original
                       </span>
                     </div>
-                    <span className="font-[family-name:var(--font-handwriting)] text-sm text-[#343D31]">
-                      Studio Select No. 01
+                    <span className="font-[family-name:var(--font-handwriting)] text-base text-[#343D31]">
+                      Whimsical Moss Studio Showcase
                     </span>
                   </div>
                 </div>
