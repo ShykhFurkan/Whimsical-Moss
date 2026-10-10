@@ -18,14 +18,25 @@ const CRAFT_OPTIONS = [
   {
     id: "pipe-cleaner-bouquet",
     name: "Pipe Cleaner Flower Bouquet",
+    startingPrice: "₹250",
     badge: "Chenille Velvet",
     description: "Sunflowers, lilies, lavender, tulips, daisies, or roses sculpted in soft chenille pipe cleaners.",
     sampleColors: "Yellow & Pink, Lavender & Sage, Peach & Cream",
     idealFor: "Birthdays, Graduations, Anniversaries, Cheer-up gifts",
   },
   {
+    id: "phone-case",
+    name: "Handmade Pipe Cleaner Phone Case",
+    startingPrice: "₹400",
+    badge: "Wearable Art",
+    description: "Rich chenille moss texture with soft dimensional floral blooms and butterfly embellishments.",
+    sampleColors: "Emerald Moss & Pink Roses, Lilac Mist & Yellow Daisies",
+    idealFor: "Unique everyday accessory, Artsy personalized gift",
+  },
+  {
     id: "crochet-creations",
     name: "Handmade Crochet Handbag or Bouquet",
+    startingPrice: "₹600",
     badge: "Spun Yarn",
     description: "Chunky two-tone bags with floral charms, or everlasting crochet rose bouquets in ruffled wraps.",
     sampleColors: "Sky Blue & Cloud White, Terracotta & Oat, Crimson & Rose",
@@ -34,6 +45,7 @@ const CRAFT_OPTIONS = [
   {
     id: "arabic-calligraphy",
     name: "Custom Arabic Calligraphy Plaque",
+    startingPrice: "₹400",
     badge: "Archival Ink & Frame",
     description: "Personalised Arabic names, Qur'anic Ayahs, wedding dates, or Duas accented with natural peacock feathers.",
     sampleColors: "Gold ink on Black, Deep Emerald on Cream, Walnut or Glass Frame",
@@ -42,18 +54,11 @@ const CRAFT_OPTIONS = [
   {
     id: "islamic-canvas",
     name: "Hand-Painted Islamic Canvas Art",
+    startingPrice: "₹400",
     badge: "Stretched Canvas",
     description: "Original acrylic and gouache painting featuring Kaaba silhouettes, Quranic verses, and floral details.",
     sampleColors: "Moody Sunset & Gold, Terracotta & Sage, Warm Interior Ochre",
     idealFor: "Prayer room wall, Living room statement, Nikkah gift",
-  },
-  {
-    id: "phone-case",
-    name: "Handmade Pipe Cleaner Phone Case",
-    badge: "Wearable Art",
-    description: "Rich chenille moss texture with soft dimensional floral blooms and butterfly embellishments.",
-    sampleColors: "Emerald Moss & Pink Roses, Lilac Mist & Yellow Daisies",
-    idealFor: "Unique everyday accessory, Artsy personalized gift",
   },
 ];
 
@@ -138,8 +143,8 @@ export function CustomOrderClient() {
                   <span className="text-[11px] font-mono uppercase tracking-wider text-[#343D31] px-2.5 py-1 rounded-full bg-[#EFE6D7]">
                     {craft.badge}
                   </span>
-                  <span className="text-xs text-[#343D31]/60 font-[family-name:var(--font-handwriting)] text-base">
-                    Customizable
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#343D31] bg-[#DCE8D5] px-2.5 py-0.5 rounded-full border border-[#343D31]/15">
+                    Starts from {craft.startingPrice}
                   </span>
                 </div>
 
@@ -208,13 +213,16 @@ export function CustomOrderClient() {
                     key={c.id}
                     type="button"
                     onClick={() => setSelectedCraft(c.name)}
-                    className={`p-3 rounded-xl border text-left text-xs font-medium transition-all cursor-pointer ${
+                    className={`p-3 rounded-xl border text-left text-xs font-medium transition-all cursor-pointer flex items-center justify-between gap-2 ${
                       selectedCraft === c.name
                         ? "border-[#343D31] bg-[#DCE8D5]/40 text-[#24231F] font-semibold ring-1 ring-[#343D31]"
                         : "border-[#343D31]/15 bg-[#F8F3E9]/60 text-[#343D31]/80 hover:bg-[#EFE6D7]"
                     }`}
                   >
-                    {c.name}
+                    <span>{c.name}</span>
+                    <span className="font-mono text-[11px] font-semibold text-[#343D31]/80 shrink-0">
+                      from {c.startingPrice}
+                    </span>
                   </button>
                 ))}
               </div>

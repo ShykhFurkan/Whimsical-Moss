@@ -35,7 +35,7 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
 
   const whatsappUrl = buildWhatsAppUrl({
     craftType: product.categoryLabel,
-    itemTitle: product.title,
+    itemTitle: `${product.title} (Starting from ${product.startingPrice})`,
   });
 
   const otherProducts = CREATION_ITEMS.filter((item) => item.id !== product.id).slice(0, 3);
@@ -149,9 +149,18 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
               {product.title}
             </h1>
 
-            <p className="font-[family-name:var(--font-handwriting)] text-xl text-[#343D31]">
-              Customizable to your preference & theme
-            </p>
+            <div className="flex flex-wrap items-baseline gap-2.5 pt-1 pb-1">
+              <span className="text-3xl font-bold font-mono text-[#343D31]">
+                {product.startingPrice}
+              </span>
+              <span className="text-xs font-mono uppercase tracking-wider text-[#343D31]/80 px-2 py-0.5 rounded bg-[#DCE8D5]/70 border border-[#343D31]/15 font-semibold">
+                Starting Price
+              </span>
+              <span className="text-xs text-[#343D31]/40">•</span>
+              <span className="text-sm font-[family-name:var(--font-handwriting)] text-[#343D31]/90">
+                Customizable to your preference & theme
+              </span>
+            </div>
           </div>
 
           <p className="text-base text-[#343D31]/85 leading-relaxed">

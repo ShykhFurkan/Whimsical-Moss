@@ -14,7 +14,7 @@ import {
 import { MessageCircle, CheckCircle2, ArrowRight } from "lucide-react";
 
 export function CustomOrderSection() {
-  const [selectedCraft, setSelectedCraft] = useState<string>("Pipe-cleaner floral arrangement");
+  const [selectedCraft, setSelectedCraft] = useState<string>("Pipe Cleaner Floral Bouquet");
   const [ideaText, setIdeaText] = useState<string>("");
   const [colorPreference, setColorPreference] = useState<string>("");
 
@@ -116,22 +116,24 @@ export function CustomOrderSection() {
                 </label>
                 <div className="flex flex-wrap gap-2">
                   {[
-                    "Pipe-cleaner floral arrangement",
-                    "Custom dip-pen calligraphy",
-                    "Pocket miniature painting",
-                    "Mixed media keepsake gift",
+                    { label: "Pipe Cleaner Floral Bouquet", price: "₹250" },
+                    { label: "Pipe Cleaner Phone Case", price: "₹400" },
+                    { label: "Crochet Rose Bouquet / Bag", price: "₹600" },
+                    { label: "Arabic Calligraphy Plaque", price: "₹400" },
+                    { label: "Islamic Canvas Painting", price: "₹400" },
                   ].map((craft) => (
                     <button
-                      key={craft}
+                      key={craft.label}
                       type="button"
-                      onClick={() => setSelectedCraft(craft)}
-                      className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-all ${
-                        selectedCraft === craft
+                      onClick={() => setSelectedCraft(craft.label)}
+                      className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer ${
+                        selectedCraft === craft.label
                           ? "bg-[#343D31] text-[#FFFEFB]"
                           : "bg-[#EFE6D7]/60 text-[#343D31] hover:bg-[#EFE6D7]"
                       }`}
                     >
-                      {craft}
+                      <span>{craft.label}</span>
+                      <span className="opacity-75 text-[11px] font-mono">from {craft.price}</span>
                     </button>
                   ))}
                 </div>

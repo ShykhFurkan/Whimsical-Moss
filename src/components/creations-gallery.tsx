@@ -85,7 +85,7 @@ export function CreationsGallery() {
           {filteredItems.map((item: CreationItem) => {
             const itemWhatsAppUrl = buildWhatsAppUrl({
               craftType: item.categoryLabel,
-              itemTitle: item.title,
+              itemTitle: `${item.title} (Starting from ${item.startingPrice})`,
             });
 
             return (
@@ -110,8 +110,8 @@ export function CreationsGallery() {
                       <span className="text-[11px] font-mono uppercase tracking-wider text-[#343D31]/60 px-2.5 py-0.5 rounded-full bg-[#EFE6D7]">
                         {item.categoryLabel}
                       </span>
-                      <span className="text-xs text-[#343D31]/60 font-[family-name:var(--font-handwriting)] text-sm">
-                        One-of-a-kind
+                      <span className="text-xs font-semibold text-[#343D31] font-mono px-2.5 py-0.5 rounded-full bg-[#DCE8D5]/60 border border-[#343D31]/10">
+                        Starts from {item.startingPrice}
                       </span>
                     </div>
 

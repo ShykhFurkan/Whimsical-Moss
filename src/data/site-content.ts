@@ -2,6 +2,7 @@ export interface CreationItem {
   id: string;
   slug: string;
   title: string;
+  startingPrice: string;
   category: "pipe-cleaner" | "calligraphy" | "paintings" | "custom";
   categoryLabel: string;
   description: string;
@@ -41,6 +42,7 @@ export const CREATION_ITEMS: CreationItem[] = [
     id: "item-1",
     slug: "pipe-cleaner-phone-case",
     title: "Pipe Cleaner Phone Case",
+    startingPrice: "₹400",
     category: "pipe-cleaner",
     categoryLabel: "Pipe-Cleaner Crafts",
     description:
@@ -62,6 +64,7 @@ export const CREATION_ITEMS: CreationItem[] = [
     id: "item-2",
     slug: "pipe-cleaner-flower-bouquet",
     title: "Handmade Pipe Cleaner Flower Bouquet",
+    startingPrice: "₹250",
     category: "pipe-cleaner",
     categoryLabel: "Pipe-Cleaner Crafts",
     description:
@@ -83,6 +86,7 @@ export const CREATION_ITEMS: CreationItem[] = [
     id: "item-3",
     slug: "crochet-rose-bouquet",
     title: "Handmade Crochet Rose Bouquet",
+    startingPrice: "₹600",
     category: "custom",
     categoryLabel: "Custom & Crochet Creations",
     description:
@@ -104,6 +108,7 @@ export const CREATION_ITEMS: CreationItem[] = [
     id: "item-4",
     slug: "crochet-handbag",
     title: "Handmade Blue & White Crochet Handbag",
+    startingPrice: "₹600",
     category: "custom",
     categoryLabel: "Custom & Crochet Creations",
     description:
@@ -125,6 +130,7 @@ export const CREATION_ITEMS: CreationItem[] = [
     id: "item-5",
     slug: "arabic-calligraphy-framed-art",
     title: "Custom Arabic Calligraphy Framed Art",
+    startingPrice: "₹400",
     category: "calligraphy",
     categoryLabel: "Calligraphy & Ink",
     description:
@@ -146,6 +152,7 @@ export const CREATION_ITEMS: CreationItem[] = [
     id: "item-6",
     slug: "islamic-canvas-wall-art",
     title: "Hand-Painted Islamic Canvas Wall Art",
+    startingPrice: "₹400",
     category: "paintings",
     categoryLabel: "Hand-Painted Canvas Art",
     description:
