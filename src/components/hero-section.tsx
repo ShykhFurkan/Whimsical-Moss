@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/site-config";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import {
@@ -141,27 +142,36 @@ export function HeroSection() {
 
               {/* Main Sketchbook Frame */}
               <div className="bg-[#FFFEFB] border border-[#343D31]/15 rounded-xl p-5 sm:p-6 shadow-xl relative">
-                {/* Polaroids / Artwork showcase simulation */}
-                <div className="relative rounded-lg overflow-hidden bg-[#DCE8D5] p-6 text-center space-y-4 border border-[#343D31]/10">
-                  <div className="w-24 h-24 mx-auto rounded-full bg-[#FFFEFB] border-2 border-[#343D31]/15 flex items-center justify-center shadow-inner relative">
-                    <BotanicalBloomSvg className="w-16 h-16 text-[#343D31]" />
-                    <span className="absolute -bottom-1 -right-1 p-1 bg-[#E8C67A] rounded-full text-[#343D31]">
-                      <Sparkles className="w-3.5 h-3.5" />
+                {/* Polaroids / Artwork showcase */}
+                <div className="relative rounded-lg overflow-hidden bg-[#EFE6D7] border border-[#343D31]/15 shadow-sm group">
+                  <div className="relative w-full h-72 sm:h-80 overflow-hidden">
+                    <Image
+                      src="/images/hero/hero-artwork.jpg"
+                      alt="Handcrafted Whimsical Moss studio creations"
+                      fill
+                      priority
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#24231F]/70 via-transparent to-transparent pointer-events-none" />
+                    <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between text-[#FFFEFB] z-10">
+                      <div>
+                        <p className="font-[family-name:var(--font-serif)] text-lg font-bold leading-tight">
+                          Handcrafted Velvet Blooms &amp; Calligraphy
+                        </p>
+                        <p className="font-[family-name:var(--font-handwriting)] text-sm text-[#E8C67A]">
+                          &ldquo;Patience, color, and gentle curves&rdquo;
+                        </p>
+                      </div>
+                      <span className="p-1.5 bg-[#E8C67A] text-[#343D31] rounded-full shadow-sm">
+                        <Sparkles className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-[#FFFEFB] flex items-center justify-between border-t border-[#343D31]/10 text-xs">
+                    <DevPlaceholderBadge label="AI Concept Photography" />
+                    <span className="font-[family-name:var(--font-handwriting)] text-sm text-[#343D31]">
+                      Studio Select No. 01
                     </span>
-                  </div>
-
-                  <div className="space-y-1">
-                    <p className="font-[family-name:var(--font-serif)] text-xl font-bold text-[#343D31]">
-                      Handcrafted Bloom & Plaque
-                    </p>
-                    <p className="font-[family-name:var(--font-handwriting)] text-lg text-[#343D31]/90">
-                      &ldquo;Patience, color, and gentle curves&rdquo;
-                    </p>
-                  </div>
-
-                  {/* Dev Placeholder Tag */}
-                  <div className="pt-2">
-                    <DevPlaceholderBadge label="Hero Art Slot — Awaiting Studio Photo" />
                   </div>
                 </div>
 

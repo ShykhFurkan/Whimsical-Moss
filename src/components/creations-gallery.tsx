@@ -97,6 +97,8 @@ export function CreationsGallery() {
                   <ArtworkVisualCanvas
                     artType={item.placeholderArtType}
                     accentColor={item.accentColor}
+                    image={item.image}
+                    title={item.title}
                   />
 
                   {/* Card Content Details */}

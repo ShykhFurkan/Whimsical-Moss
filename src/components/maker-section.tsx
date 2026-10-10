@@ -1,5 +1,6 @@
+import React from "react";
+import Image from "next/image";
 import {
-  BotanicalBloomSvg,
   BotanicalDaisySvg,
   BotanicalWildSprigSvg,
   BotanicalFloatingPetalSvg,
@@ -30,22 +31,28 @@ export function MakerSection() {
               <WashiTapeStrip className="-top-3 left-10" rotation="-2deg" color="#E8C67A" />
 
               <div className="paper-card rounded-2xl p-6 sm:p-8 space-y-6">
-                {/* Working hands / portrait placeholder illustration */}
-                <div className="relative w-full h-72 rounded-xl bg-[#EFE6D7] border border-[#343D31]/15 overflow-hidden flex flex-col items-center justify-center p-6 text-center space-y-4 shadow-inner">
-                  <div className="w-20 h-20 rounded-full bg-[#FFFEFB] border border-[#343D31]/20 flex items-center justify-center shadow-sm">
-                    <BotanicalBloomSvg className="w-12 h-12 text-[#343D31]" />
+                {/* Working hands / portrait showcase */}
+                <div className="relative w-full h-80 rounded-xl overflow-hidden border border-[#343D31]/15 shadow-sm group">
+                  <Image
+                    src="/images/maker/maker-studio.jpg"
+                    alt="Whimsical Moss maker crafting in the studio"
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#24231F]/70 via-transparent to-transparent pointer-events-none" />
+                  <div className="absolute bottom-3 left-4 right-4 flex items-end justify-between text-[#FFFEFB] z-10">
+                    <div>
+                      <p className="font-[family-name:var(--font-serif)] text-lg font-bold leading-tight">
+                        Hands at Work in the Studio
+                      </p>
+                      <p className="text-xs text-[#E8C67A] font-mono">
+                        Handcrafting each flower petal &amp; letter
+                      </p>
+                    </div>
                   </div>
-
-                  <div className="space-y-1">
-                    <p className="font-[family-name:var(--font-serif)] text-lg font-bold text-[#343D31]">
-                      In The Studio
-                    </p>
-                    <p className="text-xs text-[#343D31]/70 font-mono">
-                      Working with hands, ink, and velvet wire
-                    </p>
+                  <div className="absolute top-2.5 right-2.5 z-10">
+                    <DevPlaceholderBadge label="AI Concept Photography" />
                   </div>
-
-                  <DevPlaceholderBadge label="Studio / Maker Portrait Slot" />
                 </div>
 
                 {/* Studio Tools Snippet */}

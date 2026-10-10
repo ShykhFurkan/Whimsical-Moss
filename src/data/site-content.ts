@@ -6,6 +6,7 @@ export interface CreationItem {
   description: string;
   materials: string;
   details: string;
+  image: string;
   isPlaceholder: boolean;
   placeholderArtType: "pipe-bloom" | "calligraphy-scroll" | "mini-canvas" | "mixed-commission";
   accentColor: string;
@@ -43,6 +44,7 @@ export const CREATION_ITEMS: CreationItem[] = [
       "Everlasting floral arrangement sculptured with soft, pliable velvet pipe-cleaners in moss green, buttercup yellow, and blush.",
     materials: "Chenille stems, floral wire, wooden vase perch",
     details: "Handmade bloom by bloom. Never fades.",
+    image: "/images/creations/item-1.jpg",
     isPlaceholder: true,
     placeholderArtType: "pipe-bloom",
     accentColor: "#DCE8D5",
@@ -56,6 +58,7 @@ export const CREATION_ITEMS: CreationItem[] = [
       "Fluid, rhythmic dip-pen calligraphy inscribed onto deckle-edged handmade cotton rag paper with subtle gold mica accents.",
     materials: "Sumi ink, handmade cotton paper, 24k gold gouache",
     details: "Custom verses, vows, or favourite lyrics.",
+    image: "/images/creations/item-2.jpg",
     isPlaceholder: true,
     placeholderArtType: "calligraphy-scroll",
     accentColor: "#EFE6D7",
@@ -69,6 +72,7 @@ export const CREATION_ITEMS: CreationItem[] = [
       "An intimate gouache & watercolor study on miniature cold-pressed paper capturing wild buttercups, ferns, and forest moss.",
     materials: "Artist-grade gouache, 300gsm cold-press paper",
     details: "Warm earth tones with botanical precision.",
+    image: "/images/creations/item-3.jpg",
     isPlaceholder: true,
     placeholderArtType: "mini-canvas",
     accentColor: "#E8C67A",
@@ -82,6 +86,7 @@ export const CREATION_ITEMS: CreationItem[] = [
       "Charming miniature potted companion with textured velvet lavender sprigs nestled in a tiny ceramic cup.",
     materials: "Plush chenille yarn-wire, hand-molded clay base",
     details: "Tactile, playful desk ornament.",
+    image: "/images/creations/item-4.jpg",
     isPlaceholder: true,
     placeholderArtType: "pipe-bloom",
     accentColor: "#CFA9BA",
@@ -95,6 +100,7 @@ export const CREATION_ITEMS: CreationItem[] = [
       "Personalised name bookmark featuring delicate olive branch flourishes and calligraphy finished with a velvet ribbon.",
     materials: "Heavy watercolor cardstock, sepia ink, silk tassel",
     details: "A thoughtful, tactile gift for book lovers.",
+    image: "/images/creations/item-5.jpg",
     isPlaceholder: true,
     placeholderArtType: "calligraphy-scroll",
     accentColor: "#DCE8D5",
@@ -108,6 +114,7 @@ export const CREATION_ITEMS: CreationItem[] = [
       "Layered acrylic & gouache piece exploring deep pine silhouettes against a glowing honey dusk sky.",
     materials: "Stretched 4x4 canvas, matte varnish finish",
     details: "Compact artwork designed for mantels and desks.",
+    image: "/images/creations/item-6.jpg",
     isPlaceholder: true,
     placeholderArtType: "mini-canvas",
     accentColor: "#343D31",
@@ -121,6 +128,7 @@ export const CREATION_ITEMS: CreationItem[] = [
       "A harmonious pairing of sculptured pipe-cleaner roses alongside a hand-lettered dedication card nestled in shredded paper.",
     materials: "Mixed media: velvet wire, custom stationery, kraft box",
     details: "Crafted specifically for anniversaries and milestones.",
+    image: "/images/creations/item-7.jpg",
     isPlaceholder: true,
     placeholderArtType: "mixed-commission",
     accentColor: "#CFA9BA",
@@ -134,6 +142,7 @@ export const CREATION_ITEMS: CreationItem[] = [
       "A layered dimensional keepsake combining mini-paintings, 3D pipe-cleaner botanical elements, and handwritten calligraphy.",
     materials: "Glass frame, mixed media, archival adhesives",
     details: "Collaborative commission tailored to your memories.",
+    image: "/images/creations/item-8.jpg",
     isPlaceholder: true,
     placeholderArtType: "mixed-commission",
     accentColor: "#EFE6D7",

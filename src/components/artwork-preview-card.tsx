@@ -1,14 +1,40 @@
 import React from "react";
+import Image from "next/image";
 import { CreationItem } from "@/data/site-content";
 import { DevPlaceholderBadge } from "./dev-placeholder-badge";
 
 export function ArtworkVisualCanvas({
   artType,
   accentColor,
+  image,
+  title,
 }: {
   artType: CreationItem["placeholderArtType"];
   accentColor: string;
+  image?: string;
+  title?: string;
 }) {
+  if (image) {
+    return (
+      <div className="relative w-full h-64 overflow-hidden rounded-t-lg bg-[#EFE6D7] group">
+        <Image
+          src={image}
+          alt={title || "Whimsical Moss handcrafted artwork"}
+          width={600}
+          height={600}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        {/* Subtle inner paper border */}
+        <div className="absolute inset-0 ring-1 ring-inset ring-[#343D31]/10 pointer-events-none" />
+
+        {/* Development badge */}
+        <div className="absolute bottom-2.5 left-2.5 z-10">
+          <DevPlaceholderBadge label="AI Concept Preview" />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div
       className="relative w-full h-56 flex items-center justify-center overflow-hidden rounded-t-lg transition-transform duration-300 group-hover:scale-[1.02]"
@@ -27,7 +53,6 @@ export function ArtworkVisualCanvas({
 
       {artType === "pipe-bloom" && (
         <svg viewBox="0 0 160 160" className="w-36 h-36 drop-shadow-sm" fill="none">
-          {/* Chenille Pipe Cleaner textured petals */}
           <circle cx="80" cy="80" r="16" fill="#E8C67A" stroke="#343D31" strokeWidth="2.5" />
           <path
             d="M80 64 C65 30 95 30 80 64"
@@ -57,7 +82,6 @@ export function ArtworkVisualCanvas({
             strokeWidth="3"
             strokeLinecap="round"
           />
-          {/* Stem & Leaves */}
           <path d="M80 96 Q78 125 82 145" stroke="#343D31" strokeWidth="3.5" strokeLinecap="round" />
           <path
             d="M81 115 Q102 105 95 122 Q84 122 81 120"
@@ -83,7 +107,6 @@ export function ArtworkVisualCanvas({
 
       {artType === "mini-canvas" && (
         <div className="relative w-36 h-36 bg-[#FFFEFB] border-4 border-[#343D31]/10 shadow-md p-3 flex flex-col justify-end overflow-hidden transform rotate-[1deg]">
-          {/* Hand-painted gradient mountain & wildflower simulation */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#DCE8D5] via-[#E8C67A]/30 to-[#F8F3E9]" />
           <svg viewBox="0 0 100 60" className="absolute bottom-0 left-0 right-0 w-full" fill="none">
             <path d="M0 50 Q25 35 50 48 T100 42 L100 60 L0 60 Z" fill="#343D31" fillOpacity="0.8" />
