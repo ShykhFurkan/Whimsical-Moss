@@ -22,6 +22,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://whimsical-moss.vercel.app"),
   title: "Whimsical Moss — Handmade Crafts, Calligraphy & Custom Art",
   description:
     "A little world of handmade creations. Whimsical pipe-cleaner crafts, custom dip-pen calligraphy, mini-canvases, and bespoke commissions made with care.",

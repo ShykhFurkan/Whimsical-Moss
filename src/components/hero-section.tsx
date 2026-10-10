@@ -11,7 +11,6 @@ import {
   DoodleSparkle,
   CurvedArrow,
 } from "./hand-drawn-accents";
-import { DevPlaceholderBadge } from "./dev-placeholder-badge";
 import { MessageCircle, ArrowRight, Sparkles, Heart } from "lucide-react";
 
 export function HeroSection() {
@@ -143,10 +142,11 @@ export function HeroSection() {
                 <div className="relative rounded-lg overflow-hidden bg-[#EFE6D7] border border-[#343D31]/15 shadow-sm group">
                   <div className="relative w-full h-72 sm:h-80 overflow-hidden">
                     <Image
-                      src="/images/hero/hero-artwork.jpg"
-                      alt="Handcrafted Whimsical Moss studio creations"
+                      src="/images/hero/hero-artwork.webp"
+                      alt="Handcrafted Whimsical Moss studio creations featuring pipe-cleaner flowers, calligraphy, and botanical art"
                       fill
                       priority
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#24231F]/70 via-transparent to-transparent pointer-events-none" />
@@ -165,7 +165,12 @@ export function HeroSection() {
                     </div>
                   </div>
                   <div className="p-3 bg-[#FFFEFB] flex items-center justify-between border-t border-[#343D31]/10 text-xs">
-                    <DevPlaceholderBadge label="AI Concept Photography" />
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded border border-[#343D31]/20 bg-[#FFFEFB] text-[#343D31] shadow-2xs">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600" />
+                      <span className="font-mono text-[10px] uppercase tracking-wider font-semibold">
+                        Studio Original
+                      </span>
+                    </div>
                     <span className="font-[family-name:var(--font-handwriting)] text-sm text-[#343D31]">
                       Studio Select No. 01
                     </span>

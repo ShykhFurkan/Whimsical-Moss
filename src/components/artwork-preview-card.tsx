@@ -32,6 +32,8 @@ export function ArtworkVisualCanvas({
           alt={title || "Whimsical Moss handcrafted artwork"}
           width={600}
           height={600}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+          loading="lazy"
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         {/* Subtle inner paper border */}
@@ -76,6 +78,8 @@ export function ArtworkVisualCanvas({
                   alt={`Thumbnail ${idx + 1}`}
                   width={24}
                   height={24}
+                  sizes="24px"
+                  loading="lazy"
                   className="w-full h-full object-cover"
                 />
               </button>

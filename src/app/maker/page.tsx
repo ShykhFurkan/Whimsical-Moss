@@ -66,9 +66,11 @@ export default function MakerPage() {
                 <div className="paper-card rounded-2xl p-6 sm:p-8 space-y-6">
                   <div className="relative w-full h-84 rounded-xl overflow-hidden border border-[#343D31]/15 shadow-sm group">
                     <Image
-                      src="/images/maker/maker-studio.jpg"
+                      src="/images/maker/maker-studio.webp"
                       alt="The maker hands working in the Whimsical Moss studio"
                       fill
+                      priority
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#24231F]/80 via-transparent to-transparent pointer-events-none" />

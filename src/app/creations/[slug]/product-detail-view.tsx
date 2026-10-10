@@ -77,8 +77,8 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
               src={activeImage}
               alt={`${product.title} - View ${selectedImageIndex + 1}`}
               fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 60vw"
+              priority={selectedImageIndex === 0}
+              sizes="(max-width: 1024px) 100vw, 680px"
               className="object-cover transition-transform duration-500 group-hover:scale-102"
             />
 
@@ -110,9 +110,10 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                 >
                   <Image
                     src={img}
-                    alt={`Thumbnail view ${idx + 1}`}
+                    alt={`${product.title} angle ${idx + 1}`}
                     fill
-                    sizes="120px"
+                    sizes="(max-width: 640px) 25vw, 120px"
+                    loading="lazy"
                     className="object-cover"
                   />
                 </button>
@@ -256,7 +257,8 @@ export function ProductDetailView({ product }: ProductDetailViewProps) {
                   src={item.image}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 360px"
+                  loading="lazy"
                   className="object-cover group-hover:scale-103 transition-transform duration-300"
                 />
                 <span className="absolute top-3 left-3 text-[11px] font-mono uppercase tracking-wider text-[#343D31] px-2.5 py-0.5 rounded-full bg-[#FFFEFB]/90 backdrop-blur-xs">

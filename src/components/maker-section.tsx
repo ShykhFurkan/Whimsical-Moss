@@ -35,9 +35,11 @@ export function MakerSection() {
                 {/* Working hands / portrait showcase */}
                 <div className="relative w-full h-80 rounded-xl overflow-hidden border border-[#343D31]/15 shadow-sm group">
                   <Image
-                    src="/images/maker/maker-studio.jpg"
-                    alt="Whimsical Moss maker crafting in the studio"
+                    src="/images/maker/maker-studio.webp"
+                    alt="Whimsical Moss maker crafting by hand in the studio"
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+                    loading="lazy"
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#24231F]/70 via-transparent to-transparent pointer-events-none" />
